@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 2</title>
+</head>
+<title>HTML Select Country Phone Code List with Flags</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+        <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<body>
+    <table style="margin-left: 12%;"
+           style="margin-right: 10%;">
+        <tr >
+            <td>
+                <h1>Student Registration Form</h1>
+                <h4>Fill out the form registration </h4>
+                <hr style="height: 120%;">
+            </td>
+        </tr>
+       <tr>
+        
+            <td>
+                <form> <br><strong>
+                    Name</strong>  <br>
+                    <br> <input type="text" placeholder="First">
+                    <input type="text" placeholder="Last">
+                </form>
+            </td>
+       </tr>
+<tr>
+    <td>
+        <form> <br><strong>
+        Birth Date </strong>  <br>
+        <br>
+      <input type="date"  style="padding-right: 100px ; padding-bottom: 1px ;"/>
+    </td>
+    <td>
+        <form>
+        <br><strong>Gender</strong> <br>
+        <br> <select name="gender" id="gender" style="padding-right: 150px ; padding-bottom: 2px ;">
+            <option value="gender">Male</option>
+            <option value="gender">Female</option>
+            <option value="gender">Other</option>
+        </select>
+        </form>
+    </td>
+    
+</tr>
+
+    <tr>
+        <td>
+            <form> <br><strong>
+                Address</strong> <br>
+                <br>
+                <input type="text" placeholder="Address line 1" style="padding-right: 250px ;"> 
+                <br>
+                <input type="text" placeholder="Address Line 2" style="padding-right: 250px ;">
+                <br>
+                <input type="text" placeholder="City"> <select name="region" id="my region" style="padding: 1px 85px;">
+                    <option value="REGION">REGION</option>
+                    <option value="others">others</option>
+                </select>
+                <br>
+                <input type="text" placeholder="Zip code">
+                <select name="United states" id="my united states" style="padding: 1px 60px;">
+                    <option value="UNITED STATES">UNITED STATES</option>
+                    <option value="others">others</option>
+                </select>
+                <br>
+            </form>
+        </td>
+    </tr>       
+    <tr>
+        <td>
+            <form> <br><strong>
+                Email </strong> <br>
+                <br>
+                <input type="email" name="my email" placeholder="example@gmail.com" style="padding-right: 255px ; padding-bottom: 1px ;">
+            </form>
+        </td>
+    </tr>
+<tr>
+    <td>
+        <form> <br><strong>
+            Phone </strong> <br>
+            <br>
+            <input name="phone" type="text" id="phone"/>
+            <script>
+                var input = document.querySelector("#phone");
+                window.intlTelInput(input, {
+                    separateDialCode: true,
+                    excludeCountries: ["in", "il"],
+                    preferredCountries: ["ru", "jp", "pk", "no"]
+                });
+            </script>
+        </td>
+        <td>
+            <br><strong>
+            Work Phone </strong> <br>
+            <br>
+            <input name="workphone" type="text" id="workphone"/>
+            <script>
+                var input = document.querySelector("#workphone");
+                window.intlTelInput(input, {
+                    separateDialCode: true,
+                    excludeCountries: ["in",],
+                    preferredCountries: ["ru", "jp", "pk", "no"]
+                });
+            </script>
+           
+            
+        </td>
+        </form>
+    </td>
+</tr> 
+<tr>
+    <td>
+        <form> <br><strong>
+            Company</strong>  <br>
+            <br>
+            <input type="text" placeholder="ACME LTD" style="padding-right: 255px ; padding-bottom: 1px ;"/>
+        </form>
+    </td>
+</tr>
+<tr>
+    <td>
+        <form> <br><strong>
+            Courses </strong> <br>
+            <br>
+            <select name="courses" style="padding-right: 320px ; padding-bottom: 1px ;">
+                <option value=" please Select"> Please select</option>
+               
+            </select>
+        </form>
+    </td>
+</tr>
+<tr>
+    <td>
+        <form> <br><strong>
+            Comments </strong> <br>
+            <br>
+            <input type="text" style="padding-right: 255px ; padding-bottom: 1px ;">
+        </form>
+    </td>
+</tr>
+    </table>
+    <table style="margin-left: 12%;"
+    style="margin-right: 10%;">>
+<tr>
+    <td> 
+        <form> <br>
+           <input type="reset" value="Clear fields" style="width: 110px;height: 45px;"> 
+        </form>
+    </td>
+    <td> 
+        <form> <br>
+           <input type="submit" value="Submit form" style="width: 110px;height: 45px; background-color: rgb(184, 179, 179);" > 
+        </form>
+    </td>
+</tr>
+</table>
+    
+</body>
+</html>

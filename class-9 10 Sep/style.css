@@ -1,0 +1,13 @@
+body {
+  font-family: Arial, Verdana, sans-serif;
+  color: #665544;
+  padding: 10px;
+  background-image: url('./../class-4\ 21\ Aug/images/image1.jpeg');
+}
+.page {
+  border: 1px solid #665544;
+  background-color: #efefef;
+  padding: inherit;
+}
+
+

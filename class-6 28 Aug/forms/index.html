@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="http://www.example.com/login.php">
+      <p>
+        Username:
+        <input type="text" name="username" size="15" maxlength="30" />
+      </p>
+      <p>
+        Password:
+        <input type="password" name="password" size="15" maxlength="30" />
+      </p>
+      <input type="submit" />
+    </form>
+    <hr />
+
+    <form action="http://www.example.com/comments.php">
+      <p>What did you think of this gig?</p>
+      <textarea name="comments" cols="20" rows="4" placeholder="asdfasdf">
+Enter
+        your comments...</textarea
+      >
+    </form>
+
+    <hr />
+
+    <p>
+      Please select your favorite genre:
+      <br />
+      <input type="radio" name="genre" value="rock" checked="checked" /> Rock
+      <input type="radio" name="genre" value="pop" />
+      Pop
+      <input type="radio" name="genre" value="jazz" checked />
+      Jazz
+    </p>
+
+    <select name="instruments" size="3" multiple="multiple">
+      <option value="guitar" selected="selected">Guitar</option>
+      <option value="drums">Drums</option>
+      <option value="keyboard" selected="selected">Keyboard</option>
+      <option value="bass">Bass</option>
+    </select>
+
+    <hr />
+
+    <p>Upload your song in MP3 format:</p>
+    <input type="file" name="user-song" /><br />
+    <input type="submit" />
+
+    <hr />
+
+    <button>
+      <img src="images/add.gif" alt="add" width="10" height="10" /> Add
+    </button>
+    <input type="hidden" name="bookmark" value="lyrics" />
+
+    <hr />
+
+    <label>Age: <input type="text" name="age" /></label>
+    <br />
+    Gender:
+    <input id="female" type="radio" name="gender" value="f" />
+    <label for="female">Female</label>
+    <input id="male" type="radio" name="gender" value="m" />
+    <label for="male">Male</label>
+
+    <label for="age">Age: </label>
+    <input id="age" type="text" name="age" />
+  </body>
+</html>
