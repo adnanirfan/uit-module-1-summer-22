@@ -14,11 +14,13 @@
       //   "FirstName: " + firstName + ", Last Name: " + lastName + ", Age: " + age
       // );
 
-      var x = prompt("Enter Your Age.");
-      if (+x === 25) {
-        alert("Correct!");
+      var fN = prompt("First Name");
+      var lN = prompt("Last Name");
+      var age = prompt("Enter Your Age.");
+      if (+age > 20) {
+        alert("Eligible");
       } else {
-        alert("Wrong!");
+        alert("Not Eligible!");
       }
     </script>
   </body>

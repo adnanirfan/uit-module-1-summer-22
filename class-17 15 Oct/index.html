@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>HELLO WORLD</h1>
+    <script>
+      // for (let i = 0; i <= 15; i++) {
+      //   console.log(i);
+      //   if (i === 10) {
+      //     break;
+      //   }
+      // }
+
+      // var x = 34;
+      // const isEven = x % 2 === 0;
+
+      var arr = [43, 23, 87, 23, 67, 34, 23, 78, 324];
+      var max = 0;
+
+      document.write("<h1>Array Items </h1>");
+
+      for (let i = 0; i < arr.length; i++) {
+        const curValue = arr[i];
+        document.write(curValue);
+        if (curValue > max) {
+          // 767 > 0
+          max = curValue;
+          console.log(max)
+        }
+        if (i !== arr.length - 1) {
+          document.write(", ");
+        }
+      }
+      document.write("<br> The Largest number is: ", max);
+    </script>
+  </body>
+</html>
