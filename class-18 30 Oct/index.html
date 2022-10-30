@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Nested For Loops</h1>
+    <script>
+      // var firstNames = ["BlueRay ", "Upchuck ", "Lojack ", "Gizmo ", "Do-Rag "];
+      // var lastNames = ["Zzz", "Burp", "Dogbone", "Droop"];
+      // // var fullNames = [];
+      // var fullNames = "";
+
+      // for (var i = 0; i < firstNames.length; i++) {
+      //   var firstName = firstNames[i];
+      //   for (var j = 0; j < lastNames.length; j++) {
+      //     var lastName = lastNames[j];
+      //     console.log(firstName + lastName);
+      //     // document.write(firstName + lastName + "<br>");
+      //     // fullNames.push(firstName + lastName);
+      //     // fullNames = fullNames + firstName + lastName;
+      //     // fullNames += firstName + lastName;
+      //   }
+      // }
+      // document.write(fullNames);
+      // console.log(fullNames);
+
+      // ----------------------------
+      // var result = "";
+      // for (var i = 1; i <= 10; i++) {
+      //   result = result + 9 + "*" + i + "=" + 9 * i + "<br>";
+      // }
+      // document.write(result);
+      // ----------------------------
+
+      // *
+      // **
+      // ***
+      // ****
+      // *****
+      // ******
+      // *******
+      // ******
+      // *****
+      // ****
+      // ***
+      // **
+      // *
+      // for (var i = 1; i <= 7; i++) {
+      //   for (var j = 1; j <= i; j++) {
+      //     document.write("*");
+      //   }
+      //   document.write("<br>");
+      // }
+
+      // for (var i = 6; i >= 1; i--) {
+      //   for (var j = i; j >= 1; j--) {
+      //     document.write("*");
+      //   }
+      //   document.write("<br>");
+      // }
+      // -----------------------------
+
+      // var cleanestCities = [
+      //   "cheyenne",
+      //   "santa fe",
+      //   "tucson",
+      //   "great falls",
+      //   "honolulu",
+      // ];
+      // for (var i = 0; i <= 4; i++) {
+      //   console.log(
+      //     cleanestCities[i].toLocaleLowerCase(),
+      //       cleanestCities[i].toLocaleUpperCase()
+      //   );
+      // }
+
+      // --------------------
+
+      // var str = prompt("Enter some text");
+      // var numChars = str.length;
+      // for (var i = 0; i < numChars; i++) {
+      //   if (str.slice(i, i + 2) === "  ") {
+      //     alert("No double spaces!");
+      //     break;
+      //   }
+      // }
+      // ________________________
+
+      var text =
+        'World War II The code loops through the string looking for "World War II." Line 2 progresses through the string character-by-character, examining each 12-character sequence. If it finds "World War II," line 3 concatenates three segments: all the characters preceding "World War II," the substitute phrase "the Second World War," and then all the characters following "World War II."';
+
+      document.write(text);
+
+      for (var i = 0; i < text.length; i++) {
+        if (text.slice(i, i + 12) === "World War II") {
+          text = text.slice(0, i) + "the Second World War" + text.slice(i + 12);
+        }
+      }
+      document.write("<br>");
+      document.write("<br>");
+      document.write(text);
+
+      if (text.indexOf('!') !== -1) {
+        alert("Exclamation point found!");
+      }
+    </script>
+  </body>
+</html>
