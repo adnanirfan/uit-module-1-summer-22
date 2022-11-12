@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter 39</title>
+    <script>
+      /**
+       * Switch Case
+       * */
+      // const dayOfWk = 0; // new Date().getDay();
+      // const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      // console.log(dayOfWk);
+
+      // switch (days[dayOfWk]) {
+      //   case "Sat":
+      //   case "Sun":
+      //     console.log("Weekend:", days[dayOfWk]);
+      //     break;
+
+      //   case "Fri":
+      //     console.log("Fri!", days[dayOfWk]);
+      //     break;
+
+      //   default:
+      //     console.log("Shoot me now!");
+      // }
+
+      // var i = -10;
+      // while (i < 0) {
+      //   console.log("while", i);
+      //   i++;
+      // }
+
+      // var j = 0;
+      // do {
+      //   console.log("do while", j);
+      //   j++;
+      // } while (j < 0);
+
+      function onClick() {
+        console.log("From onClick Event ");
+      }
+
+      function onFocus(x) {
+        x.style.backgroundColor = "orange";
+      }
+      function onBlur() {
+        this.style.backgroundColor = "red";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Events -->
+    <a href="#" onclick="alert('Link to google'); console.log(1234567890);"
+      >Link to Google</a
+    >
+    <!-- <a href="JavaScript:void(0)" onclick="onClick();">Click</a> -->
+
+    <button onclick="alert('Click Event');">Click Me!</button>
+
+    <input type="button" value="Click" onClick="alert('Hello world!');" />
+
+    <br />
+    <br />
+    <!-- onFocus="this.style.backgroundColor='yellow';" -->
+    <input type="text" size="30" onFocus="onFocus(this);" onBlur="onBlur();" />
+
+    <div
+      style="width: 200px; height: 200px"
+      onmouseover="this.style.backgroundColor='red'"
+      onmouseleave="this.style.backgroundColor='blue'"
+    >
+      DIV
+    </div>
+  </body>
+</html>
