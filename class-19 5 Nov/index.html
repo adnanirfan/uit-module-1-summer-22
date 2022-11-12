@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter 26</title>
+    <script>
+      // var scoreAvg = prompt("Enter floating number");
+      // var numberOfStars = Math.round(scoreAvg);
+      // document.write(scoreAvg, "<br>");
+      // document.write(numberOfStars);
+
+      // var randomNumber = Math.random();
+
+      // var bigDecimal = Math.random(); // 0.23423423423412312
+      // var improvedNum = bigDecimal * 10 + 1;
+      // var numberOfStars = Math.floor(improvedNum);
+      // document.write(numberOfStars);
+
+      // var n1 = prompt("Enter 1st Number .");
+      // var n2 = prompt("Enter 2nd Number .");
+      // var result = parseFloat(n1) + parseFloat(n2);
+      // document.write(result);
+
+      // var n1 = parseFloat(prompt("Enter 1st Number ."));
+      // var result = n1.toFixed(2);
+      // document.write(result);
+
+      // var rightNow = new Date();
+      // // var dateString = rightNow.toString();
+      // document.write(rightNow.getDay());
+
+      // var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      // var now = new Date();
+      // var theDay = now.getDay();
+      // var nameOfToday = dayNames[theDay];
+      // document.write(nameOfToday);
+
+      var today = new Date();
+      var doomsday = new Date("June 30, 2035");
+
+      var msToday = today.getTime();
+      var msDoomsday = doomsday.getTime();
+      var msDiff = msDoomsday - msToday;
+      var dDiff = msDiff / (1000 * 60 * 60 * 24);
+      dDiff = Math.floor(dDiff);
+      console.log(dDiff);
+
+
+      /**
+       * random
+       * round
+       * ceil
+       * floor
+       * parseInt
+       * parseFloat
+       * Number
+       * toString
+       * toFixed
+       * + - * / "34"
+       * Date & Time
+       * get Methods
+       * Time Difference
+       * set Methods
+       * */
+    </script>
+  </head>
+  <body></body>
+</html>

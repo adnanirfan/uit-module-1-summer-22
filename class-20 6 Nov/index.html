@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter 26</title>
+    <script>
+      function tellTime() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        const milliseconds = now.getMilliseconds();
+        alert(hours + ":" + minutes + ":" + seconds + ":" + milliseconds);
+      }
+
+      // tellTime();
+
+      function sum(a, b) {
+        return a + b;
+      }
+      function subtract(a, b) {
+        const result = a + b;
+        return result;
+      }
+
+      // const, let, var
+      var x = sum(3, 6);
+      console.log(x, sum(3, 6));
+
+      // x = sub(3, 6);
+      // console.log(x);
+
+      // function greetUser(greeting) {
+      //   alert(greeting);
+      // }
+
+      // const x = "123423141234234";
+      // greetUser(x);
+
+      // function showMessage(m, string, num) {
+      //   alert(m + string + num);
+      // }
+
+      // showMessage("Hello", "abc", "xyz");
+
+      // Recursion
+      // function abc(a) {
+      //   return abc(a);
+      // }
+
+      // var theSum;
+      // addNumbers();
+      // console.log(addNumbers);
+      // function addNumbers() {
+      //   theSum = 2 + 2;
+      // }
+      // console.log("theSum: ", theSum);
+
+      function calculate(num1, num2, op) {
+        let result;
+        if (op === "+") {
+          result = num1 + num2;
+        } else if (op === "-") {
+          result = num1 - num2;
+        } else if (op === "*") {
+          result = num1 * num2;
+        } else if (op === "/") {
+          result = num1 / num2;
+        }
+        return result;
+      }
+      // console.log(calculate(2, 3, "+"));
+      // console.log(calculate(2, 3, "-"));
+      // console.log(calculate(2, 3, "*"));
+      // console.log(calculate(2, 3, "/"));
+
+      function count() {
+        const startNum = prompt("Enter Starting Number");
+        const endNum = prompt("Enter Ending Number");
+
+        for (let i = startNum; i <= endNum; i++) {
+          // console.log(i);
+          document.write(i, ',');
+        }
+      }
+      count();
+    </script>
+  </head>
+  <body></body>
+</html>
