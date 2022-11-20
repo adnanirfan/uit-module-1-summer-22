@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter 49</title>
+    <script>
+      // function checkAddress() {
+      const tags = document.getElementsByTagName("input");
+
+      const emailInput = tags[0];
+      const email = emailInput.value;
+      //   console.log(email);
+      // }
+
+      function deleteRow(currentElement) {
+        console.log(currentElement);
+        currentElement.parentElement.parentElement.remove();
+      }
+      function addRow() {
+        var table = document.getElementById("students-table");
+
+        var row = table.insertRow();
+
+        var cell1 = row.insertCell();
+        var cell2 = row.insertCell();
+        var cell3 = row.insertCell();
+        var cell4 = row.insertCell();
+
+        const btn = document.createElement("button");
+        btn.onclick = deleteRow.bind(this, btn);
+        btn.innerText = "Delete Row";
+
+        const tags = document.getElementsByTagName("input");
+        const indexValue = tags[0].value;
+        const nameValue = tags[1].value;
+        const classValue = tags[2].value;
+
+        cell1.innerHTML = indexValue;
+        cell2.innerHTML = nameValue;
+        cell3.innerHTML = classValue;
+        cell4.appendChild(btn);
+      }
+    </script>
+  </head>
+  <body>
+    <form onSubmit="checkAddress();" action="#">
+      Index:
+      <input type="text" />
+      Name:
+      <input type="text" />
+      Class:
+      <input type="text" />
+      <input type="submit" value="Submit" />
+    </form>
+    <button onclick="addRow();">Add Row</button>
+    <table id="students-table">
+      <tr>
+        <td>Index</td>
+        <td>Name</td>
+        <td>Class</td>
+      </tr>
+      <tr id="0">
+        <td>0</td>
+        <td>Abc</td>
+        <td>II</td>
+        <td><button onclick="deleteRow(this);">Delete</button></td>
+      </tr>
+      <tr id="1">
+        <td>1</td>
+        <td>Def</td>
+        <td>II</td>
+        <td><button onclick="deleteRow(this);">Delete</button></td>
+      </tr>
+      <tr id="2">
+        <td>2</td>
+        <td>Ghi</td>
+        <td>III</td>
+        <td><button onclick="deleteRow(this);">Delete</button></td>
+      </tr>
+    </table>
+  </body>
+</html>
