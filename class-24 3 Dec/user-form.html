@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>User Form</title>
+  </head>
+  <body>
+    <form id="form">
+      First Name:
+      <input type="text" /> <br />
+      Last Name:
+      <input type="text" /> <br />
+      Email:
+      <input type="text" /> <br />
+      Phone:
+      <input type="text" /> <br />
+      Address:
+      <input type="text" /> <br />
+    </form>
+
+    <button onclick="addUser();">Add User</button>
+
+    <table id="students-table">
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Address</td>
+        <td>Actions</td>
+      </tr>
+    </table>
+    <script defer>
+      let users = localStorage.getItem("users") || [];
+      console.log(typeof users);
+      if (typeof users === "string") {
+        users = JSON.parse(users);
+      }
+      console.log(typeof users);
+
+      users.forEach(function (value, index) {
+        addRow(
+          value.firstName,
+          value.lastName,
+          value.email,
+          value.phone,
+          value.address
+        );
+      });
+
+      function deleteRow(currentElement) {
+        console.log(currentElement);
+        currentElement.parentElement.parentElement.remove();
+      }
+
+      function addRow(firstName, lastName, email, phone, address) {
+        var table = document.getElementById("students-table");
+
+        var row = table.insertRow();
+
+        var cell1 = row.insertCell();
+        var cell2 = row.insertCell();
+        var cell3 = row.insertCell();
+        var cell4 = row.insertCell();
+        var cell5 = row.insertCell();
+        var cell6 = row.insertCell();
+
+        const btn = document.createElement("button");
+        btn.onclick = deleteRow.bind(this, btn);
+        btn.innerText = "Delete Row";
+
+        cell1.innerHTML = firstName;
+        cell2.innerHTML = lastName;
+        cell3.innerHTML = email;
+        cell4.innerHTML = phone;
+        cell5.innerHTML = address;
+        cell6.appendChild(btn);
+      }
+
+      function addUser() {
+        const tags = document.getElementsByTagName("input");
+        const firstName = tags[0].value;
+        const lastName = tags[1].value;
+        const email = tags[2].value;
+        const phone = tags[3].value;
+        const address = tags[4].value;
+        if (!firstName || !lastName || !email || !phone || !address)
+          return null;
+
+        users.push({ firstName, lastName, email, phone, address });
+        localStorage.setItem("users", JSON.stringify(users));
+
+        addRow(firstName, lastName, email, phone, address);
+
+        const form = document.getElementById("form");
+        form.reset();
+      }
+    </script>
+  </body>
+</html>

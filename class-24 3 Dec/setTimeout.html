@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>setTimeout & setIntervals</title>
+    <script>
+      setTimeout(function () {
+        console.log("after 5 seconds");
+        clearInterval(x);
+      }, 5000);
+
+      const x = setInterval(function () {
+        console.log("after every 1 seconds");
+      }, 1000);
+    </script>
+  </head>
+  <body></body>
+</html>

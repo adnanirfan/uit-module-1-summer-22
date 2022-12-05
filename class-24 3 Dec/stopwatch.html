@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StopWatch</title>
+  </head>
+  <body>
+    <h1 id="counter"></h1>
+    <button onclick="start();">Start</button>
+    <button onclick="stop();">Stop</button>
+    <button onclick="reset();">Reset</button>
+
+    <script>
+      let seconds = 0;
+      let minutes = 0;
+      let intervalID;
+      let counterElement = document.getElementById("counter");
+      counterElement.innerHTML = minutes + ":" + seconds;
+
+      function start() {
+        intervalID = setInterval(() => {
+          if (seconds == 5) {
+            seconds = 0;
+            minutes++;
+          }
+          counterElement.innerHTML = minutes + ":" + ++seconds;
+        }, 500);
+      }
+      function stop() {
+        clearInterval(intervalID);
+      }
+      function reset() {
+        seconds = 0;
+        minutes = 0;
+        counterElement.innerHTML = minutes + ":" + seconds;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Chapter</title>
+    <script>
+      function changeHandler(key) {
+        return (e) => {
+          console.log(key, event);
+        };
+      }
+      /**
+       * LocalStorage
+       *    project
+       * Constructor Functions
+       * setInterval
+       * setTimeout
+       * StopWatch with Minutes & Seconds
+       */
+      // LocalStorage
+      // localStorage.setItem("name", "qwerty");
+      // localStorage.setItem("name1", 12345);
+      // localStorage.setItem("name11", 12345.23432);
+      // localStorage.setItem("name2", true);
+      // localStorage.setItem("name3", [1, 2, 4, 5, 6]);
+      // localStorage.setItem("name4", { name: "UIT" });
+
+      // const x1 = localStorage.getItem("name");
+      // const x2 = localStorage.getItem("name3");
+      // const x3 = localStorage.getItem("name4");
+      // const x4 = localStorage.getItem("name2");
+      // const x5 = localStorage.getItem("name1");
+      // const x6 = localStorage.getItem("name11");
+      // console.log("x1:", x1);
+      // console.log("x2:", x2);
+      // console.log("x3:", x3);
+      // console.log("x4:", x4);
+      // console.log("x5:", x5);
+      // console.log("x6:", x6);
+
+      /* let obj = {
+                    address: "sadjfhsadjklf",
+                    email: "asdf@fasdf.sdf",
+                    phone: 234234234,
+                    hasPhone: true,
+                    age: 32424,
+                    xyz: 34.2131,
+                    nestedObj: { hello: "world" },
+                    array: [, 123423, 2343, 2234, 234],
+                  };
+                  obj = JSON.stringify(obj);
+                  localStorage.setItem("name4", obj);
+
+                  let data = localStorage.getItem("name4");
+                  // document.write(data);
+                  data = JSON.parse(data);
+
+                  console.log(data);
+                  console.log(data.address);
+                  console.log(data.phone);
+                  console.log(data.hasPhone);
+                  console.log(data.nestedObj);
+                  console.log(data.array); */
+
+      function Plan(name, price, space, transfer, pages, discountMonths) {
+        this.name = name;
+        this.price = price;
+        this.space = space;
+        this.transfer = transfer;
+        this.pages = pages;
+        this.discountMonths = discountMonths;
+        this.calcAnnualFees = function (percentIfDisc) {
+          var bestPrice = this.price;
+
+          var currDate = new Date();
+          var thisMo = currDate.getMonth();
+          for (var i = 0; i < this.discountMonths.length; i++) {
+            if (this.discountMonths[i] === thisMo) {
+              bestPrice = this.price * percentIfDisc;
+              break;
+            }
+          }
+          return bestPrice * 12;
+        };
+      }
+
+      const plan1 = new Plan("basic", 3.99, "100gb", "1000gb", 10, [6, 7, 11]);
+      const plan2 = new Plan("professional", 6.99, "400gb", "2000gb", 30);
+
+      const users = [];
+      users.push(plan1);
+
+      plan1.name = "BASIC PLAN";
+      console.log(plan1.calcAnnualFees(10));
+
+      /**
+       * firstname
+       * lastname
+       * email
+       * phone
+       * address
+       */
+    </script>
+  </head>
+  <body>
+    <input type="text" onchange="changeHandler('name')()" />
+    <input type="text" onchange="changeHandler('email')()" />
+  </body>
+</html>
