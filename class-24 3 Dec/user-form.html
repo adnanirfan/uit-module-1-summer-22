@@ -29,6 +29,7 @@
         <td>Actions</td>
       </tr>
     </table>
+
     <script defer>
       let users = localStorage.getItem("users") || [];
       console.log(typeof users);
@@ -43,16 +44,23 @@
           value.lastName,
           value.email,
           value.phone,
-          value.address
+          value.address,
+          index
         );
       });
 
-      function deleteRow(currentElement) {
+      function deleteRow(currentElement, index) {
         console.log(currentElement);
         currentElement.parentElement.parentElement.remove();
+
+        // const list = JSON.parse(localStorage.getItem("users"));
+        users.splice(index, 1)
+        console.log(users);
+
+        localStorage.setItem("users", JSON.stringify(users));
       }
 
-      function addRow(firstName, lastName, email, phone, address) {
+      function addRow(firstName, lastName, email, phone, address, index) {
         var table = document.getElementById("students-table");
 
         var row = table.insertRow();
@@ -65,7 +73,7 @@
         var cell6 = row.insertCell();
 
         const btn = document.createElement("button");
-        btn.onclick = deleteRow.bind(this, btn);
+        btn.onclick = deleteRow.bind(this, btn, index);
         btn.innerText = "Delete Row";
 
         cell1.innerHTML = firstName;
@@ -83,13 +91,13 @@
         const email = tags[2].value;
         const phone = tags[3].value;
         const address = tags[4].value;
-        if (!firstName || !lastName || !email || !phone || !address)
-          return null;
+        //if (!firstName || !lastName || !email || !phone || !address)
+          //return null;
 
         users.push({ firstName, lastName, email, phone, address });
         localStorage.setItem("users", JSON.stringify(users));
 
-        addRow(firstName, lastName, email, phone, address);
+        addRow(firstName, lastName, email, phone, address, users.length - 1);
 
         const form = document.getElementById("form");
         form.reset();

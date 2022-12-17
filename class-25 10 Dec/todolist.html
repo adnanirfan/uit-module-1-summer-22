@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Todo List</title>
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body style="margin: auto">
+    <form id="form">
+      <input type="text" id="todo-input" placeholder="Enter Todo" />
+    </form>
+    <button id="add-button" onclick="addTodo();">Add</button>
+    <button class="hide" id="edit-button" onclick="updateTodo();">
+      Update
+    </button>
+
+    <table id="todos-table">
+      <tr>
+        <td>#</td>
+        <td>Todo</td>
+        <td>Actions</td>
+      </tr>
+    </table>
+
+    <script defer>
+      let list = [];
+      let editIndex = null;
+
+      function deleteRow(currentElement, index) {
+        console.log(currentElement);
+        currentElement.parentElement.parentElement.remove();
+
+        // const list = JSON.parse(localStorage.getItem("users"));
+        list.splice(index, 1);
+        console.log(list);
+      }
+
+      function updateTodo() {
+        const newText = document.getElementById("todo-input").value;
+        console.log(newText);
+        list[editIndex].todo = newText;
+        document.getElementsByTagName("table")[0].rows[
+          editIndex + 1
+        ].cells[1].innerHTML = newText;
+
+        editIndex = null;
+        toggleButtons();
+        document.getElementById("form").reset();
+      }
+
+      function toggleButtons() {
+        document.getElementById("add-button").classList.toggle("hide");
+        document.getElementById("edit-button").classList.toggle("hide");
+      }
+
+      function editRow(index) {
+        const text = list[index];
+        console.log(text, index);
+        const input = document.getElementById("todo-input");
+        input.value = text.todo;
+
+        editIndex = index;
+
+        toggleButtons();
+      }
+
+      function addRow(todo, index) {
+        var table = document.getElementById("todos-table");
+
+        var row = table.insertRow();
+
+        var cell1 = row.insertCell();
+        var cell2 = row.insertCell();
+        var cell3 = row.insertCell();
+
+        const editBtn = document.createElement("button");
+        editBtn.onclick = editRow.bind(this, index);
+        editBtn.innerText = "Edit Row";
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.onclick = deleteRow.bind(this, deleteBtn, index);
+        deleteBtn.innerText = "Delete Row";
+
+        cell1.innerHTML = '<input type="checkbox"/>';
+        cell2.innerHTML = todo;
+        cell3.appendChild(editBtn);
+        cell3.appendChild(deleteBtn);
+      }
+
+      function addTodo() {
+        const tags = document.getElementsByTagName("input");
+        const todo = tags[0].value;
+
+        //if (!todo)
+        //return null;
+
+        list.push({ todo });
+
+        addRow(todo, list.length - 1);
+
+        document.getElementById("form").reset();
+      }
+    </script>
+  </body>
+</html>
